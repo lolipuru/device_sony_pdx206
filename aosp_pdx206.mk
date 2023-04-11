@@ -22,21 +22,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
 
-# Rice Specific props
-RICE_MAINTAINER := lolipuru
-TARGET_ENABLE_BLUR := true
-TARGET_USE_PIXEL_FINGERPRINT := true
-SUSHI_BOOTANIMATION := 1080
-RICE_PACKAGE_TYPE := Gapps
+TARGET_BOOT_ANIMATION_RES := 1080
+
 WITH_GMS := true
-TARGET_OPTOUT_GOOGLE_TELEPHONY := true
 IS_PHONE := true
 
-PRODUCT_NAME := lineage_pdx206
+PRODUCT_NAME := aosp_pdx206
 PRODUCT_DEVICE := pdx206
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_BRAND := Sony
